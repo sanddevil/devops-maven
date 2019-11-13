@@ -4,5 +4,6 @@ RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
     && docker-php-ext-enable memcached 
 COPY docroot/ /var/www/html/.
 COPY entry.sh /usr/local/bin/.  
+ENV AH_SITE_ENVIRONMENT devops
 RUN /bin/bash -c 'chown www-data:www-data /var/www/html/index.php'
 RUN /bin/bash -c 'chmod +x /usr/local/bin/entry.sh'
