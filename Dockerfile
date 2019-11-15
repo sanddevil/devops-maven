@@ -2,7 +2,7 @@ FROM php:7.2-apache
 RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
     && pecl install memcached \
     && docker-php-ext-enable memcached 
-COPY --chown=www-data:www-data docroot/ /var/www/html/.
+COPY --chown=www-data:www-data ./ /var/www/html/.
 COPY entry.sh /usr/local/bin/.  
 ENV AH_SITE_ENVIRONMENT devops
 ENV APACHE_DOCUMENT_ROOT /var/www/html/docroot
