@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev \
     && docker-php-ext-enable memcached 
 COPY --chown=www-data:www-data ./ /var/www/html/.
 COPY entry.sh /usr/local/bin/.  
+COPY 000-default.conf /etc/apache2/sites-available/.
 ENV AH_SITE_ENVIRONMENT devops
 ENV APACHE_DOCUMENT_ROOT /var/www/html/docroot
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
