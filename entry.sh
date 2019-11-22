@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+ls -las /var/automated_tests
+
 case "$1" in
 
  testing) echo "Running automated testing"
