@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+cp -R /var/www/html/test  /var/automated_tests/.
 ls -las /var/automated_tests
 
 case "$1" in
