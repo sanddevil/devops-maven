@@ -41,7 +41,9 @@ copy_reference_files() {
 }
 
 # Wait until we see the test files that are being copied from the PHP/Apache/Codebase container to a shared volume.
-while [ ! -d /var/automated_tests ]
+echo "$@"
+
+while [ ! -d /var/automated_tests/test ]
 do
   sleep 2
 done
