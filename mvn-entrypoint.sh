@@ -55,4 +55,4 @@ unset MAVEN_CONFIG
 cd "${owd}"
 unset owd
 
-exec "$@"
+exec mvn -f /var/automated_tests/test -q clean install
